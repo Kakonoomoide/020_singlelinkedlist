@@ -7,7 +7,7 @@ struct Node{
 	Node* next;
 };
 
-Node* start = null;
+Node* START = NULL;
 
 void addNode() {
 	int nim;
@@ -21,6 +21,13 @@ void addNode() {
 
 	nodeBaru->noMhs = nim;
 	nodeBaru->name = nama;
+
+	if (START == NULL || nim <= START->noMhs) {
+		if (START != NULL && nim == START->noMhs) {
+			cout << "Nim sudah ada!" << endl;
+			return;
+		}
+	}
 }
 
 int main(){
