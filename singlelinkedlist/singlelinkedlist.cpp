@@ -27,10 +27,20 @@ void addNode() {
 			cout << "Nim sudah ada!" << endl;
 			return;
 		}
+		nodeBaru->next = START;
+		START = nodeBaru;
+		return;
 	}
 
 	Node* previous = START;
 	Node* current = START;
+
+	while ((current != NULL) && (nim >= current->noMhs)){
+		if (nim == current->noMhs) {
+			cout << "Nim sudah ada!" << endl;
+			return;
+		}
+	}
 }
 
 int main(){
